@@ -1,0 +1,9 @@
+---
+- name: copy the ssh public key to the opwenswitch
+  hosts: switches
+  gather_facts: no
+  vars:
+    ansible_ssh_user: root
+    public_key: /root/.ssh/id_rsa.pub
+  tasks:
+    - authorized_key: user=admin key="{{ lookup('file', public_key) }}"

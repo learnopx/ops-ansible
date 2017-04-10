@@ -1,0 +1,20 @@
+[
+    {
+        "files": ["*"],
+        "modifiers": [
+            {
+                "nodes": ["type=openswitch"],
+                "attributes": {
+                    "image": "@TEST_IMAGE@",
+                    "binds": "@TEST_COV_DIR@:@TEST_COV_DIR@"
+                }
+            },
+            {
+                "nodes": ["type=oobmhost"],
+                "attributes": {
+                    "binds": "@BUILD_ROOT@/src/ops-ansible:/etc/ansible;@BUILD_ROOT@/src/ops-ansible/utils:/root/.ssh"
+                }
+            }
+         ]
+    }
+]
